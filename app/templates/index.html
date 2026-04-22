@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons (WORKING CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Title -->
+    <div class="title">🏥 Disease Prediction System</div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/"><i class="fa-solid fa-droplet"></i> Diabetes</a>
+        <a href="/heart"><i class="fa-solid fa-heart-pulse"></i> Heart</a>
+        <a href="/parkinson"><i class="fa-solid fa-brain"></i> Parkinson</a>
+        <a href="/liver"><i class="fa-solid fa-notes-medical"></i> Liver</a> <!-- ✅ ADDED -->
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+
+        <h2>🩺 {{ disease }} Prediction</h2>
+
+        <form method="POST">
+
+            <div class="form-grid">
+
+                {% for field in fields %}
+                    <input type="text" name="{{ field }}" placeholder="🔹 {{ field }}">
+                {% endfor %}
+
+            </div>
+
+            <button class="btn">
+                <i class="fa-solid fa-stethoscope"></i> Predict
+            </button>
+
+        </form>
+
+        {% if result %}
+            <div class="result {{ 'success' if 'No' in result or 'Healthy' in result else 'error' }}">
+                {{ result }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkinson's Prediction</title>
+</head>
+<body>
+    <h2>Parkinson's Prediction</h2>
+
+    <form method="POST">
+        Fo: <input type="number" name="fo"><br>
+        Fhi: <input type="number" name="fhi"><br>
+        Flo: <input type="number" name="flo"><br>
+        Jitter: <input type="number" name="jitter"><br>
+        Shimmer: <input type="number" name="shimmer"><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is defined %}
+        <h3>Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>

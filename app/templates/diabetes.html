@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <h2>Diabetes Prediction</h2>
+
+    <form method="POST">
+        Age: <input type="number" name="age"><br>
+        Gender (0=F,1=M): <input type="number" name="gender"><br>
+        Hypertension: <input type="number" name="hypertension"><br>
+        Heart Disease: <input type="number" name="heart_disease"><br>
+        Smoking: <input type="number" name="smoking"><br>
+        BMI: <input type="number" name="bmi"><br>
+        HbA1c: <input type="number" name="hba1c"><br>
+        Glucose: <input type="number" name="glucose"><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is defined %}
+        <h3>Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>

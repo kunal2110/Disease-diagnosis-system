@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liver Prediction</title>
+</head>
+<body>
+    <h2>Liver Disease Prediction</h2>
+
+    <form method="POST">
+        Age: <input type="number" name="age"><br>
+        Gender (0=F,1=M): <input type="number" name="gender"><br>
+        Total Bilirubin: <input type="number" name="tb"><br>
+        Direct Bilirubin: <input type="number" name="db"><br>
+        Alk Phosphotase: <input type="number" name="alkphos"><br>
+        SGPT: <input type="number" name="sgpt"><br>
+        SGOT: <input type="number" name="sgot"><br>
+        Total Protein: <input type="number" name="tp"><br>
+        Albumin: <input type="number" name="alb"><br>
+        A/G Ratio: <input type="number" name="ag_ratio"><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is defined %}
+        <h3>Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
